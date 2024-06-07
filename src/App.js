@@ -1,15 +1,14 @@
 import React,{ useState} from 'react';
 import './App.css';
+import About from './components/About'
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Routes,
-//   Route,
-//   Link
-// } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
 
 function App() {
   const [mode , setMode] = useState('light');/*Weather dark mode is enabled or not*/
@@ -25,10 +24,10 @@ function App() {
       setAlert(null);
     }, 2000);
   }
-  const toggleBlueMode = () => {
+  const toggleMode = () => {
     if(mode !=='#021057'){
       setMode('#021057');
-      showAlert("Dark Blue mode has been enabled","success");
+      showAlert("Dark  mode has been enabled","success");
       setModex('light');
       document.body.style.backgroundColor = '#021057';
     }
@@ -39,63 +38,35 @@ function App() {
       showAlert("Light mode has been enabled","success");
     }
   }
-  const toggleRedMode = () => {
-    if(mode !=='#a90000'){
-      setMode('#a90000');
-      showAlert("Dark Red mode has been enabled","success");
-      setModex('light');
-      document.body.style.backgroundColor = '#a90000';
-    }
-    else{
-      setMode('light');
-      setModex('dark');
-      document.body.style.backgroundColor = 'white';
-      showAlert("Light mode has been enabled","success");
-    }
-  }
-  const toggleGreenMode = () => {
-    if(mode !=='#095100'){
-      setMode('#095100');
-      showAlert("Dark Green mode has been enabled","success");
-      setModex('light');
-      document.body.style.backgroundColor = '#095100';
-    }
-    else{
-      setMode('light');
-      setModex('dark');
-      document.body.style.backgroundColor = 'white';
-      showAlert("Light mode has been enabled","success");
-    }
-  }
+  
   return (
     <>
-     {/* <Router> */}
+     <Router>
         <Navbar
           title="TextUtils"
           aboutText="Text Abouts" 
           mode={mode}
           modex ={modex}
-          toggleBlueMode={toggleBlueMode}
-          toggleRedMode={toggleRedMode}
-          toggleGreenMode={toggleGreenMode}
+          toggleBlueMode={toggleMode}
         />
         <Alert alert={alert} />
         <div className="container my-4">
-          {/* <Routes>
+          <Routes>
             <Route exact path="/about" element={<About mode = {mode}/>}></Route>
             <Route
               exact path="/"
-              element={ */}
+              element={
                 <TextForm
                   
                   heading="Enter Text to analyze "
                   mode={mode}
+                  showAlert={showAlert}
                 />
-              {/* }
+               }
             ></Route>
-          </Routes> */}
+          </Routes> 
         </div>
-      {/* </Router> */}
+       </Router> 
     
     </>
   );

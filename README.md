@@ -1,4 +1,19 @@
-# Getting Started with Create React App
+# How to Use App
+
+This App is made for the basic and mostly used utilities of text editing 
+
+This App offers following action on your text
+1. Conversion To Upper Case : convert complete text to upperCase
+2. Conversion To Lower Case : convert complete text to lowerCase
+3. Clears The Text if added mistakenly
+4. Copy Text To Clip-Board
+5. Remove extra spaces in a uneven text
+
+Preview is available for the users as well
+
+There is a word and character counter in the app and it also tells weather how much time it it will take to read the given text.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
