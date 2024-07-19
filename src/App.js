@@ -25,8 +25,8 @@ function App() {
     }, 2000);
   }
   const toggleMode = () => {
-    if(mode !=='#021057'){
-      setMode('#021057');
+    if(mode !=='dark'){
+      setMode('dark');
       showAlert("Dark  mode has been enabled","success");
       setModex('light');
       document.body.style.backgroundColor = '#021057';
@@ -46,8 +46,7 @@ function App() {
           title="TextUtils"
           aboutText="Text Abouts" 
           mode={mode}
-          modex ={modex}
-          toggleBlueMode={toggleMode}
+          toggleMode={toggleMode}
         />
         <Alert alert={alert} />
         <div className="container my-4">
